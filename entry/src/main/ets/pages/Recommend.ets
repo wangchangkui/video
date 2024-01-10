@@ -1,21 +1,28 @@
+import { HomeVideoComponent } from '../component/home/HomeVideoComponent'
+import { VideoGrid } from '../entity/VideoGrid'
+import { VideoGridModelAndView } from '../model/VideoGridModelAndView'
+
 @Component
 export struct Recommend {
   private swiperController: SwiperController = new SwiperController()
   private scroller: Scroller = new Scroller()
+  @State private fireTop: Array<VideoGrid> = VideoGridModelAndView.fireTop()
+  @State private swiper: Array<VideoGrid> = VideoGridModelAndView.swiper()
 
   build() {
+
     Column() {
       Scroll(this.scroller) {
         Flex({
-          direction:FlexDirection.Column,
-          wrap:FlexWrap.Wrap,
-          justifyContent:FlexAlign.Start,
-          alignItems:ItemAlign.Center,
-          alignContent:FlexAlign.Center
-        }){
+          direction: FlexDirection.Column,
+          wrap: FlexWrap.Wrap,
+          justifyContent: FlexAlign.Start,
+          alignItems: ItemAlign.Center,
+          alignContent: FlexAlign.Center
+        }) {
           Column({
-            space:15
-          }){
+            space: 15
+          }) {
             // 本周推荐标题
             Row() {
               Text("本周推荐")
@@ -31,10 +38,9 @@ export struct Recommend {
             // 轮播图
             Row() {
               Swiper(this.swiperController) {
-                Image("https://yinghua.ee/upload/vod/20231229-1/38e8a7f5f00e36123e688a5a58e4e76d.jpg")
-                Image("https://yinghua.ee/upload/vod/20231222-1/9f4c0f6d646e125c1b3576f49eabaaff.png")
-                Image("https://puui.qpic.cn/tv/0/1249646742_1920800/0")
-                Image("https://img.qula.top/YH/upload/vod/20231205-1/b6d7891019fcd7cf233f3fd8459133d7.jpg")
+                ForEach(this.swiper, (item: VideoGrid) => {
+                  Image(item.img)
+                }, item => JSON.stringify(item))
               }
               .autoPlay(true)
               .interval(5000)
@@ -46,18 +52,35 @@ export struct Recommend {
             .width("100%")
             .height(200)
 
-            // 大家都在看标题
-            Row() {
-              Text("大家都在看")
-                .fontColor("#ffffff")
-                .fontWeight(FontWeight.Bold)
-                .fontSize(18)
-                .fontFamily("宋体")
+            HomeVideoComponent({
+              scroller: this.scroller,
+              data: this.fireTop,
+              title: "大家都在看"
+            })
 
-            }
-            .width("100%")
+            HomeVideoComponent({
+              scroller: this.scroller,
+              data: this.fireTop,
+              title: "院线片"
+            })
 
-            //
+            HomeVideoComponent({
+              scroller: this.scroller,
+              data: this.fireTop,
+              title: "日韩"
+            })
+
+            HomeVideoComponent({
+              scroller: this.scroller,
+              data: this.fireTop,
+              title: "热播漫"
+            })
+
+            HomeVideoComponent({
+              scroller: this.scroller,
+              data: this.fireTop,
+              title: "爽剧"
+            })
           }
 
         }
