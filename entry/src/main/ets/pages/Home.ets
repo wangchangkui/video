@@ -49,25 +49,39 @@ export struct Home{
           }
           .tabBar(this.TabBuilder(0, '推荐'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"电影"
+            })
           }.tabBar(this.TabBuilder(1, '电影'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"电视剧"
+            })
           }.tabBar(this.TabBuilder(2, '电视剧'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"综艺"
+            })
           }.tabBar(this.TabBuilder(3, '综艺'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"动漫"
+            })
           }.tabBar(this.TabBuilder(4, '动漫'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"记录"
+            })
           }.tabBar(this.TabBuilder(5, '记录'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"短剧"
+            })
           }.tabBar(this.TabBuilder(6, '短剧'))
           TabContent(){
-            CommonVideoPage()
+            CommonVideoPage({
+              type:"少儿"
+            })
           }.tabBar(this.TabBuilder(7, '少儿'))
 
         }
