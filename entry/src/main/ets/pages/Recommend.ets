@@ -10,87 +10,84 @@ export struct Recommend {
   @State private swiper: Array<VideoGrid> = VideoGridModelAndView.swiper()
 
   build() {
-
     Column() {
       Scroll(this.scroller) {
-        Flex({
-          direction: FlexDirection.Column,
-          wrap: FlexWrap.Wrap,
-          justifyContent: FlexAlign.Start,
-          alignItems: ItemAlign.Center,
-          alignContent: FlexAlign.Center
+        Column({
+          space: 15
         }) {
-          Column({
-            space: 15
-          }) {
-            // 本周推荐标题
-            Row() {
-              Text("本周推荐")
-                .fontColor("#ffffff")
-                .fontWeight(FontWeight.Bold)
-                .fontSize(22)
-                .fontFamily("宋体")
+          // 本周推荐标题
+          Row() {
+            Text("本周推荐")
+              .fontColor("#ffffff")
+              .fontWeight(FontWeight.Bold)
+              .fontSize(22)
+              .fontFamily("宋体")
 
-            }
-            .width("100%")
-            .height(50)
+          }
+          .width("100%")
+          .height(50)
 
-            // 轮播图
-            Row() {
-              Swiper(this.swiperController) {
-                ForEach(this.swiper, (item: VideoGrid) => {
-                  Image(item.img)
-                }, item => JSON.stringify(item))
-              }
-              .autoPlay(true)
-              .interval(5000)
-              .width("100%")
-              .height(200)
-              .backgroundColor("#232323")
-              .borderRadius(20)
+          // 轮播图
+          Row() {
+            Swiper(this.swiperController) {
+              ForEach(this.swiper, (item: VideoGrid) => {
+                Image(item.img)
+              }, item => JSON.stringify(item))
             }
+            .autoPlay(true)
+            .interval(5000)
             .width("100%")
             .height(200)
-
-            HomeVideoComponent({
-              scroller: this.scroller,
-              data: this.fireTop,
-              title: "大家都在看"
-            })
-
-            HomeVideoComponent({
-              scroller: this.scroller,
-              data: this.fireTop,
-              title: "院线片"
-            })
-
-            HomeVideoComponent({
-              scroller: this.scroller,
-              data: this.fireTop,
-              title: "日韩"
-            })
-
-            HomeVideoComponent({
-              scroller: this.scroller,
-              data: this.fireTop,
-              title: "热播漫"
-            })
-
-            HomeVideoComponent({
-              scroller: this.scroller,
-              data: this.fireTop,
-              title: "爽剧"
-            })
+            .backgroundColor("#232323")
+            .borderRadius(20)
           }
+          .width("100%")
+          .height(200)
 
+          HomeVideoComponent({
+            scroller: this.scroller,
+            data: this.fireTop,
+            title: "大家都在看"
+          })
+
+          HomeVideoComponent({
+            scroller: this.scroller,
+            data: this.fireTop,
+            title: "院线片"
+          })
+
+          HomeVideoComponent({
+            scroller: this.scroller,
+            data: this.fireTop,
+            title: "日韩"
+          })
+
+          HomeVideoComponent({
+            scroller: this.scroller,
+            data: this.fireTop,
+            title: "热播漫"
+          })
+
+          HomeVideoComponent({
+            scroller: this.scroller,
+            data: this.fireTop,
+            title: "爽剧"
+          })
+          // 这里只是因为底部的tab切换导航会隐藏一部分内容
+          // 所以这里加一个空白高度
+          Column(){
+
+          }
+          .height(75)
         }
-        .height("400%")
+
       }
-      .edgeEffect(EdgeEffect.Spring)
+      .edgeEffect(EdgeEffect.Fade)
       .scrollBar(BarState.Auto)
+      .scrollBarColor("#ffffff")
+      .scrollBarWidth(8)
       .scrollable(ScrollDirection.Vertical)
       .width("100%")
-
     }
 
   }

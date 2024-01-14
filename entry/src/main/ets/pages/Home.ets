@@ -95,8 +95,6 @@ export struct Home{
       .alignItems(VerticalAlign.Center)
       .justifyContent(FlexAlign.Center)
       .width("90%")
-
-
     }
     .width("100%")
     .height("100%")
