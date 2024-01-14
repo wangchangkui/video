@@ -28,4 +28,32 @@ export class VideoGridModelAndView{
     ]
   }
 
+  public static videoFilmData():Array<VideoGrid>{
+    return [
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230629-1/5edf0cc836bf23b634a7bee46f916d85.jpg","人生路熟"),
+      new VideoGrid("https://image.maimn.com/cover/696ea2c7271f939ccafc511902e85604.jpg","熊出没·重返地球"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20220320-1/c631a3472d98149a35bede151c706e07.jpg","我不是药神"),
+      new VideoGrid("https://img.maimn.com/upload/vod/2021-12-08/202112081638958013.jpg","猪猪侠之英雄猪少年"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20220404-1/84a296eaa362d518c54199841689da22.jpg","一眉道人"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20221112-1/e7b8105c71a777634d9f1c14dbb33fe6.jpg","西红柿首富"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230601-1/b08ad9a7f6a7b9aa6a141477cd95c520.jpg","龙马精神"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20220427-1/1cfc3edeb6a7353ca5321ef742f39134.jpg","唐人街探案"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20220507-1/d01b8eb8314f0827b95a660f23578e30.jpg","喜剧之王"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230725-1/d8a6fa70d79c5659d36fd6f24dec1cc6.jpg","二手搭档"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230707-1/340a5499be8f29852c4d7fe6502584c5.jpg","枪神再起"),
+      new VideoGrid("https://p.ssl.qhimg.com/d/dy_fc61008fcffa096a2d9ff9650ab0bc27.jpg","老少爷打鬼子"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230125-1/d483055d1f3dfc2cf1f758ab1bbee54e.jpg","满江红"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230620-1/49a62117dc8db6d49c22db4e8dec1503.jpg","了不起夜晚"),
+      new VideoGrid("https://pic.wujinpp.com/upload/vod/20210728-1/5fa00121c407f68d52c88eb89f44f94e.jpg","大闹西游"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230219-1/713819cde46301493a1c2da9302842e8.jpg","僵尸先生"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20230511-1/996d8964b0d66bba1f4ca01559f55fca.jpg","保你平安"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20220328-1/dfe0f1e786c8b43db621d34461fd33c7.webp","功夫之王"),
+      new VideoGrid("https://pic.lzzypic.com/upload/vod/20221104-1/1fc866cc004707bcf6657efd84e431ff.jpg","阖家辣"),
+      new VideoGrid("https://image.maimn.com/cover/3ecf70058911d495069ec09c0c8c9190.jpg","熊出没·伴我“熊芯”")
+
+    ]
+  }
+
+
+
 }

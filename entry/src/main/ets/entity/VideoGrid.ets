@@ -6,7 +6,8 @@ export class VideoGrid{
 
   constructor(img:Resource|string,text:string) {
     this.img = img;
-    this.text = text
+    this.text = text;
   }
+
 
 }

@@ -84,8 +84,8 @@ export struct Recommend {
       }
       .edgeEffect(EdgeEffect.Fade)
       .scrollBar(BarState.Auto)
-      .scrollBarColor("#ffffff")
-      .scrollBarWidth(8)
+      .scrollBarColor("#ffa7a7a7")
+      .scrollBarWidth(4)
       .scrollable(ScrollDirection.Vertical)
       .width("100%")
     }
