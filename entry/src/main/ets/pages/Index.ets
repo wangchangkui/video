@@ -5,7 +5,6 @@ import { Rank } from './Rank'
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World'
   @State currentIndex: number = 0
   private tabController: TabsController = new TabsController()
 

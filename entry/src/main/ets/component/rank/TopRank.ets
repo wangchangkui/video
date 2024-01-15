@@ -1,0 +1,73 @@
+import { VideoGrid } from '../../entity/VideoGrid'
+@Component
+export struct TopRank{
+  topVideo:Array<VideoGrid>
+  private scroller: Scroller = new Scroller()
+  build(){
+    Flex({
+      direction:FlexDirection.Column
+    }){
+      Scroll(this.scroller){
+        Text("内容根据全站搜索数觉得,随时更新")
+          .fontSize(10)
+          .fontColor("#ffffff")
+          .height(50)
+        Column(){
+          ForEach(this.topVideo,(item:VideoGrid)=>{
+            Row({
+              space:10
+            }){
+              Row(){
+                Image(item.img)
+                  .width(100)
+                  .height(120)
+              }
+              Column({
+                space:8
+              }){
+                Text(item.text)
+                  .fontSize(16)
+                  .fontWeight(FontWeight.Bold)
+                  .fontColor("#ffffff")
+                  .width("100%")
+                  .textAlign(TextAlign.Start)
+                Text(item.desc)
+                  .fontSize(14)
+                  .fontColor("#ff999595")
+                  .maxLines(5)
+                  .lineHeight(15)
+                  .textOverflow({
+                    overflow:TextOverflow.Ellipsis
+                  })
+              }
+              .width("70%")
+              .height(150)
+              .alignItems(HorizontalAlign.Center)
+              .justifyContent(FlexAlign.Start)
+            }
+            .height(400)
+            .backgroundColor("#ff2323")
+            .borderRadius(10)
+            .alignItems(VerticalAlign.Center)
+            .justifyContent(FlexAlign.SpaceBetween)
+            .width("100%")
+          },item=>JSON.stringify(item))
+        }
+        .width("100%")
+        .height(700)
+        // 这里只是因为底部的tab切换导航会隐藏一部分内容
+        // 所以这里加一个空白高度
+        Column(){
+
+        }
+        .height(75)
+      }
+      .edgeEffect(EdgeEffect.Fade)
+      .scrollBar(BarState.Auto)
+      .scrollBarColor("#ffa7a7a7")
+      .scrollBarWidth(4)
+      .scrollable(ScrollDirection.Vertical)
+      .width("100%")
+    }
+  }
+}
